@@ -73,7 +73,7 @@ export default function NavBar() {
                   zIndex: -1,
                 }}
               >
-                <NextLink href="/">🤝BetterFund</NextLink>
+                <NextLink href="/">🪙CampusCoin</NextLink>
               </Box>
             </Heading>
           </Flex>
@@ -90,7 +90,7 @@ export default function NavBar() {
               variant={"link"}
               display={{ base: "none", md: "inline-flex" }}
             >
-              <NextLink href="/campaign/new">Create Campaign</NextLink>
+              <NextLink href="/campaign/new">Add Project</NextLink>
             </Button>
             <Button
               fontSize={"md"}

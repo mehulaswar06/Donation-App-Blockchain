@@ -157,7 +157,7 @@ export default function CampaignSingle({
   return (
     <div>
       <Head>
-        <title>Campaign Details</title>
+        <title>Project Details</title>
         <meta name="description" content="Create a Withdrawal Request" />
         <link rel="icon" href="/logo.svg" />
       </Head>
@@ -230,10 +230,10 @@ export default function CampaignSingle({
                     }
                   />
                   <StatsCard
-                    title={"Wallet Address of Campaign Creator"}
+                    title={"Wallet Address of Project Creator"}
                     stat={manager}
                     info={
-                      "The Campaign Creator created the campaign and can create requests to withdraw money."
+                      "The Project Creator created the project and can create requests to withdraw money."
                     }
                   />
                   <StatsCard
@@ -247,7 +247,7 @@ export default function CampaignSingle({
                     title={"Number of Approvers"}
                     stat={approversCount}
                     info={
-                      "Number of people who have already donated to this campaign"
+                      "Number of people who have already donated to this project"
                     }
                   />
                 </SimpleGrid>
@@ -265,10 +265,10 @@ export default function CampaignSingle({
                   <StatLabel fontWeight={"medium"}>
                     <Text as="span" isTruncated mr={2}>
                       {" "}
-                      Campaign Balance
+                     Project Balance
                     </Text>
                     <Tooltip
-                      label="The balance is how much money this campaign has left to
+                      label="The balance is how much money this project has left to
                   spend."
                       bg={useColorModeValue("white", "gray.700")}
                       placement={"top"}

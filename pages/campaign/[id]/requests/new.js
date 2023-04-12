@@ -181,7 +181,7 @@ export default function NewRequest() {
                       <Alert status="warning">
                         <AlertIcon />
                         <AlertDescription mr={2}>
-                          Please Connect Your Wallet First to Create a Campaign
+                          Please Connect Your Wallet First to add a Project
                         </AlertDescription>
                       </Alert>
                     </Stack>

@@ -84,8 +84,8 @@ export default function NewCampaign() {
   return (
     <div>
       <Head>
-        <title>New Campaign</title>
-        <meta name="description" content="Create New Campaign" />
+        <title>Add Project</title>
+        <meta name="description" content="Add Project" />
         <link rel="icon" href="/logo.svg" />
       </Head>
       <main>
@@ -95,7 +95,7 @@ export default function NewCampaign() {
             <NextLink href="/"> Back to Home</NextLink>
           </Text>
           <Stack>
-            <Heading fontSize={"4xl"}>Create a New Campaign 📢</Heading>
+            <Heading fontSize={"4xl"}>Add a New Project 📢</Heading>
           </Stack>
           <Box
             rounded={"lg"}
@@ -127,14 +127,14 @@ export default function NewCampaign() {
                   ) : null}
                 </FormControl>
                 <FormControl id="campaignName">
-                  <FormLabel>Campaign Name</FormLabel>
+                  <FormLabel>Project Name</FormLabel>
                   <Input
                     {...register("campaignName", { required: true })}
                     isDisabled={isSubmitting}
                   />
                 </FormControl>
                 <FormControl id="description">
-                  <FormLabel>Campaign Description</FormLabel>
+                  <FormLabel>Project Description</FormLabel>
                   <Textarea
                     {...register("description", { required: true })}
                     isDisabled={isSubmitting}
@@ -216,7 +216,7 @@ export default function NewCampaign() {
                       <Alert status="warning">
                         <AlertIcon />
                         <AlertDescription mr={2}>
-                          Please Connect Your Wallet First to Create a Campaign
+                          Please Connect Your Wallet First to Create a Project
                         </AlertDescription>
                       </Alert>
                     </Stack>

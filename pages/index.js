@@ -227,12 +227,12 @@ export default function Home({ campaigns }) {
   return (
     <div>
       <Head>
-        <title>BetterFund</title>
+        <title>CampusCoin</title>
         <meta
           name="description"
           content="Transparent Crowdfunding in Blockchain"
         />
-        <link rel="icon" href="/logo.svg" />
+        {/* <link rel="icon" href="/logo.svg" /> */}
       </Head>
       <main className={styles.main}>
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"} align={"left"}>
@@ -244,7 +244,7 @@ export default function Home({ campaigns }) {
             as="h1"
             py={4}
           >
-            Crowdfunding using the powers of <br /> Crypto & Blockchain 😄{" "}
+            Capital raising using the powers of <br /> Crypto & Blockchain 😄{" "}
           </Heading>
           <NextLink href="/campaign/new">
             <Button
@@ -257,7 +257,7 @@ export default function Home({ campaigns }) {
                 bg: "teal.300",
               }}
             >
-              Create Campaign
+              Add Project
             </Button>
           </NextLink>
         </Container>
@@ -265,7 +265,7 @@ export default function Home({ campaigns }) {
           <HStack spacing={2}>
             <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
-              Open Campaigns
+              Open Projects
             </Heading>
           </HStack>
 
@@ -302,23 +302,23 @@ export default function Home({ campaigns }) {
           <HStack spacing={2}>
             <SkeletonCircle size="4" />
             <Heading as="h2" size="lg">
-              How BetterFund Works
+              How CampusCoin Works
             </Heading>
           </HStack>
           <Divider marginTop="4" />
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} py={8}>
             <Feature
               icon={<Icon as={FcDonate} w={10} h={10} />}
-              title={"Create a Campaign for Fundraising"}
+              title={"Add a Project for Capital Raising"}
               text={
-                "It’ll take only 2 minutes. Just enter a few details about the funds you are raising for."
+                "It’ll take only 2 minutes. Just enter a few details about the projecf you are raising for."
               }
             />
             <Feature
               icon={<Icon as={FcShare} w={10} h={10} />}
-              title={"Share your Campaign"}
+              title={"Share your Project"}
               text={
-                "All you need to do is share the Campaign with your friends, family and others. In no time, support will start pouring in."
+                "All you need to do is share the Project with your friends, family and others. In no time, support will start pouring in."
               }
             />
             <Feature
@@ -329,16 +329,6 @@ export default function Home({ campaigns }) {
               }
             />
           </SimpleGrid>
-          <Heading as="h2" size="lg" mt="8">
-            For any queries raise an issue on{" "}
-            <Link
-              color="teal.500"
-              href="https://github.com/harsh242/betterfund-crowdfunding-in-blockchain/issues"
-              isExternal
-            >
-              the Github Repo <ExternalLinkIcon mx="2px" />
-            </Link>{" "}
-          </Heading>
           <Divider marginTop="4" />
         </Container>
       </main>
