@@ -321,13 +321,13 @@ export default function Home({ campaigns }) {
                 "All you need to do is share the Project with your friends, family and others. In no time, support will start pouring in."
               }
             />
-            <Feature
+            {/* <Feature
               icon={<Icon as={FcMoneyTransfer} w={10} h={10} />}
               title={"Request and Withdraw Funds"}
               text={
                 "The funds raised can be withdrawn directly to the recipient when 50% of the contributors approve of the Withdrawal Request."
               }
-            />
+            /> */}
           </SimpleGrid>
           <Divider marginTop="4" />
         </Container>

@@ -9,7 +9,7 @@ if (typeof window !== "undefined" && typeof window.web3 !== "undefined") {
   // we are on the server *OR* meta mask is not running
   // creating our own provider
   const provider = new Web3.providers.HttpProvider(
-    "https://goerli.infura.io/v3/a9fcf0c87c2042f784a0666cb8a2b5c4"
+    "https://goerli.infura.io/v3/0863a9272bf44ed38f6662ebf001618c"
   );
 
   web3 = new Web3(provider);

@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
           connectors={{
             walletconnect: {
               rpcUrl:
-                "https://goerli.infura.io/v3/a9fcf0c87c2042f784a0666cb8a2b5c4",
+                "https://goerli.infura.io/v3/0863a9272bf44ed38f6662ebf001618c",
             },
           }}
         > 

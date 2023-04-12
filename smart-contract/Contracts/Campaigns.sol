@@ -88,7 +88,7 @@ contract Campaign {
   }
 
 
-    function getSummary() public view returns (uint,uint,uint,uint,address,string,string,string,uint) {
+    function getSummary() public view returns (uint,uint,uint,uint,address,string,string,string,uint,address[]) {
         return(
             minimunContribution,
             this.balance,
@@ -98,7 +98,8 @@ contract Campaign {
             CampaignName,
             CampaignDescription,
             imageUrl,
-            targetToAchieve
+            targetToAchieve,
+            contributers
           );
     }
 

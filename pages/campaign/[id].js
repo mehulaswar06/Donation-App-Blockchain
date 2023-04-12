@@ -64,6 +64,7 @@ export async function getServerSideProps({ params }) {
       image: summary[7],
       target: summary[8],
       ETHPrice,
+      contributers: summary[9],
     },
   };
 }
@@ -110,6 +111,63 @@ function StatsCard(props) {
   );
 }
 
+function StatsCard1(props) {
+  const { title, stat, info } = props;
+  return (
+    <Stat
+      px={{ base: 2, md: 4 }}
+      py={"5"}
+      shadow={"sm"}
+      border={"1px solid"}
+      borderColor={"gray.500"}
+      rounded={"lg"}
+      transition={"transform 0.3s ease"}
+      _hover={{
+        transform: "translateY(-5px)",
+      }}
+    >
+      <Tooltip
+        label={info}
+        bg={useColorModeValue("white", "gray.700")}
+        placement={"top"}
+        color={useColorModeValue("gray.800", "white")}
+        fontSize={"1em"}
+      >
+        <Flex justifyContent={"space-between"}>
+          <Box pl={{ base: 2, md: 4 }}>
+            <StatLabel fontWeight={"medium"} isTruncated>
+              {title}
+            </StatLabel>
+            {stat.length > 0 &&
+              stat.map((a, index) => {
+                return (
+                  <StatNumber
+                    fontSize={"base"}
+                    fontWeight={"bold"}
+                    isTruncated
+                    maxW={{ base: "	10rem", sm: "sm" }}
+                  >
+                    {index + 1 + ". " + a}
+                  </StatNumber>
+                );
+              })}
+            {stat.length == 0 && (
+              <StatNumber
+                fontSize={"base"}
+                fontWeight={"bold"}
+                isTruncated
+                maxW={{ base: "	10rem", sm: "sm" }}
+              >
+                -
+              </StatNumber>
+            )}
+          </Box>
+        </Flex>
+      </Tooltip>
+    </Stat>
+  );
+}
+
 export default function CampaignSingle({
   id,
   minimumContribution,
@@ -122,6 +180,7 @@ export default function CampaignSingle({
   image,
   target,
   ETHPrice,
+  contributers,
 }) {
   const { handleSubmit, register, formState, reset, getValues } = useForm({
     mode: "onChange",
@@ -133,7 +192,6 @@ export default function CampaignSingle({
   const router = useRouter();
   const { width, height } = useWindowSize();
   async function onSubmit(data) {
-    console.log(data);
     try {
       const campaign = Campaign(id);
       const accounts = await web3.eth.getAccounts();
@@ -209,10 +267,10 @@ export default function CampaignSingle({
               </Text>
               <Link
                 color="teal.500"
-                href={`https://rinkeby.etherscan.io/address/${id}`}
+                href={`https://goerli.etherscan.io/address/${id}`}
                 isExternal
               >
-                View on Rinkeby Etherscan <ExternalLinkIcon mx="2px" />
+                View on Goerli Etherscan <ExternalLinkIcon mx="2px" />
               </Link>
               <Box mx={"auto"} w={"full"}>
                 <SimpleGrid columns={{ base: 1 }} spacing={{ base: 5 }}>
@@ -237,18 +295,16 @@ export default function CampaignSingle({
                     }
                   />
                   <StatsCard
-                    title={"Number of Requests"}
-                    stat={requestsCount}
-                    info={
-                      "A request tries to withdraw money from the contract. Requests must be approved by approvers"
-                    }
-                  />
-                  <StatsCard
-                    title={"Number of Approvers"}
+                    title={"Number of Contributors"}
                     stat={approversCount}
                     info={
                       "Number of people who have already donated to this project"
                     }
+                  />
+                  <StatsCard1
+                    title={"List of Contributors"}
+                    stat={contributers}
+                    info={"abc"}
                   />
                 </SimpleGrid>
               </Box>
@@ -265,7 +321,7 @@ export default function CampaignSingle({
                   <StatLabel fontWeight={"medium"}>
                     <Text as="span" isTruncated mr={2}>
                       {" "}
-                     Project Balance
+                      Project Balance
                     </Text>
                     <Tooltip
                       label="The balance is how much money this project has left to
@@ -407,7 +463,7 @@ export default function CampaignSingle({
                 </Box>
               </Stack>
 
-              <Stack
+              {/* <Stack
                 bg={useColorModeValue("white", "gray.700")}
                 boxShadow={"lg"}
                 rounded={"xl"}
@@ -432,7 +488,7 @@ export default function CampaignSingle({
                   * You can see where these funds are being used & if you have
                   contributed you can also approve those Withdrawal Requests :)
                 </Text>
-              </Stack>
+              </Stack> */}
             </Stack>
           </Container>
         </Box>
